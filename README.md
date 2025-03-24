@@ -10,7 +10,7 @@ In this part, we implement region-based segmentation approach to identify and se
 ## Methods Used
 
 ### 1. Preprocessing
-- Images are loaded and converted to **HSV (Hue, Saturation, Value)** and **Grayscale** formats.
+- Images are converted to **HSV (Hue, Saturation, Value)** and **Grayscale** formats.
 - **Gaussian Blurring** is applied to reduce noise and smooth the image for better segmentation.
 
 ### 2. Segmentation Techniques
