@@ -165,6 +165,11 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 
 
 
+
+
+
+
+
 ## PART D -  Mask Segmentation Using U-Net
 
 ## Introduction 
@@ -204,7 +209,7 @@ The dataset is split into training and testing sets using an 80-20 split (`train
 
 ---
 
-## Step 2: Preprocessing 
+### Step 2: Preprocessing 
 
 The preprocessing step ensures the dataset is prepared for effective training. The following transformations are applied: 
 
@@ -216,9 +221,9 @@ After preprocessing, the input images have dimensions of (128, 128, 3), represen
 
 ---
 
-## Step 3: Model Architecture 
+### Step 3: Model Architecture 
 
-### U-Net Model: 
+#### U-Net Model: 
 
 A custom U-Net model is built using Keras. 
 
@@ -245,8 +250,8 @@ A custom U-Net model is built using Keras.
    - The final layer is a `Conv2D` layer with 1 filter and kernel size (1x1).  
    - The activation function is set to `sigmoid`, producing an output mask with dimensions (128, 128, 1), where pixel values range between 0 and 1. 
 
-### Model Parameters: 
-
+#### Model Parameters: 
+- **Model Parameters**:
 - **Number of Filters**: `num_filters`, defining the base number of filters in the first convolutional block. 
 - **Number of Layers**: `num_layers`, representing the number of encoder-decoder blocks. 
 - **Activation Function**: `activation`, such as ReLU, applied after each convolution operation. 
