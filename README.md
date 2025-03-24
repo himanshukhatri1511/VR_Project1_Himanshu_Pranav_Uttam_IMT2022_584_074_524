@@ -37,20 +37,22 @@ In this part, we implement region-based segmentation approach to identify and se
 
 
 ## Evaluation
-- The predicted segmentation masks are compared with the ground truth masks using two metrics:
-  - **Intersection over Union (IoU)**: Measures the overlap between the predicted and ground truth masks.
-  - **Dice Score**: Measures the similarity between the predicted and ground truth masks.
 
-- For each image, **IoU** and **Dice Score** are computed.
+The predicted segmentation masks are evaluated against the ground truth masks using the following metrics:
 
-- The **average IoU score** across all images is **0.35**
-- The **average Dice score** is **0.50**
+- **Intersection over Union (IoU):** Measures the overlap between the predicted and ground truth masks.
+- **Dice Score:** Measures the similarity between the predicted and ground truth masks.
 
+For each image, both **IoU** and **Dice Score** are computed to assess segmentation accuracy.
+
+-  **Average IoU Score:** **0.35** 
+-  **Average Dice Score:** **0.50** 
   
 ## Output
 - The final segmentation masks are obtained and compared with **ground truth segmentation masks** for evaluation .
-- The **top 5 images** with the highest segmentation accuracy (highest IoU scores) are visualized, displaying:
+- The **top 5 images** with the highest segmentation accuracy (highest IoU scores) are visualized.
 
- 
+ ![Figure_1](https://github.com/user-attachments/assets/a1e9f02a-fc9e-4069-bd89-67c3e633e55e)
+
      
 
