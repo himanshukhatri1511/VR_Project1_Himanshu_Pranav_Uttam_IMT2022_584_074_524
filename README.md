@@ -2,11 +2,11 @@
 
 ## PART C - Region Segmentation Using Traditional Techniques
 
-### Objective
+## Objective
 In this part, we implement a region-based segmentation approach to identify and segment mask regions for faces classified as **"with mask."**  
 The predicted segmentation masks are compared with the provided ground truth masks and evaluated using **Intersection over Union (IoU)** and **Dice Score**.
 
-### Input Dataset
+## Input Dataset
 - The dataset consists of **8,225 images**, with cropped face regions extracted for individuals wearing masks.
 - Each image has a corresponding **ground truth segmentation mask**.
 
