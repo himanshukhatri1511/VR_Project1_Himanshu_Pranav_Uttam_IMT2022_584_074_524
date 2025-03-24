@@ -1,4 +1,46 @@
 # VR_Project: Face Mask Detection, Classification, and Segmentation
+# Visual Recognition Project
+
+<h3 align = "center">
+Himanshu Khatri(IMT2022584)<br>
+Pranav Laddhad(IMT2022074)<br>
+Uttam Hamsaraj(IMT2022524)</h3>
+
+# Introduction
+
+Develop a computer vision solution to classify and segment face masks in images. The
+project involves using handcrafted features with machine learning classifiers and deep
+learning techniques to perform classification and segmentation.
+
+# Dataset and Libraries used
+
+A labeled dataset containing images of people with and without face masks and a Masked
+Face Segmentation dataset with ground truth face masks was given.
+
+- For the dataset corresponding to the binary classification task, we have a total of
+    4,095 images, with 2,165 images labeled as with_maskand 1,930 images labeled
+    as without_mask, indicating that the dataset is well-balanced.<br>
+    Dataset: https://github.com/chandrikadeb7/Face-Mask-Detection/tree/master/dataset
+- For the dataset corresponding to the binary segmentation task, we have a total of
+    9,382 images in the face_crop directory, along with 9,382 corresponding labels
+    (segmented output masks). Each input image is an RGB image of size (128, 128,
+    3), while the segmented binary mask output is a grayscale image of size (128, 128,
+    1).<br>
+    Dataset: https://github.com/sadjadrz/MFSD
+
+The libraries used in the project are as follows:
+
+- **TensorFlow & Keras**: Deep learning model building and training.
+- **OpenCV & scikit-image**: Image processing and feature extraction.
+- **matplotlib**: For data visualization.
+- **scikit-learn**: For machine learning model implementation and evaluation.
+- **NumPy**: Numerical computations.
+
+
+#Binary Classification(Task A and B)
+
+
+
 
 ## PART C - Region Segmentation Using Traditional Techniques
 
