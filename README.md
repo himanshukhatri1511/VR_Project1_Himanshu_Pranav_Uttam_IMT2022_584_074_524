@@ -154,7 +154,7 @@ The following combinations were tested:
 | MLP         | 90.17%   | 1-1.5 minutes |
 
 ### Observations
-1. **CNN outperformed SVM and MLP** by a significant margin (up to **+6.5% accuracy**).
+1. **CNN outperformed SVM and MLP** by a significant margin.
 2. **Adam optimizer** was more effective than SGD.
 3. **Dropout = 0.3** provided the best balance between generalization and accuracy.
 4. **Training time** for CNN was longer (~6-7 minutes) compared to traditional ML models (~1-1.5 minutes).
