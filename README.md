@@ -251,7 +251,6 @@ A custom U-Net model is built using Keras.
    - The activation function is set to `sigmoid`, producing an output mask with dimensions (128, 128, 1), where pixel values range between 0 and 1. 
 
 #### Model Parameters: 
-- **Model Parameters**:
 - **Number of Filters**: `num_filters`, defining the base number of filters in the first convolutional block. 
 - **Number of Layers**: `num_layers`, representing the number of encoder-decoder blocks. 
 - **Activation Function**: `activation`, such as ReLU, applied after each convolution operation. 
@@ -266,15 +265,15 @@ A custom U-Net model is built using Keras.
 
 ---
 
-## Step 4: Grid Search for Hyperparameter Tuning 
+### Step 4: Grid Search for Hyperparameter Tuning 
 
-### Grid Search: 
+#### Grid Search: 
 To identify the optimal hyperparameters for the U-Net model, a grid search approach is employed. This involves: 
 
 - Defining a **Parameter Grid** containing various combinations of hyperparameters. 
 - Using `ParameterGrid` from `sklearn.model_selection` to generate all possible combinations of the defined hyperparameters. 
 
-### Hyperparameter Tuning Process: 
+#### Hyperparameter Tuning Process: 
 
 1. **Model Building**:  
    The `build_unet_model` function is used to construct the U-Net model based on the current combination of hyperparameters from the grid. 
@@ -283,7 +282,7 @@ To identify the optimal hyperparameters for the U-Net model, a grid search appro
    - For each hyperparameter combination, the model is compiled, trained, and validated.  
    - Performance is assessed using validation loss and segmentation metrics, which include pixel-level metrics tailored to the segmentation task. 
 
-### Custom Metrics: 
+#### Custom Metrics: 
 
 Since standard Keras metrics are designed for classification tasks, custom metrics were implemented: 
 
@@ -292,11 +291,11 @@ Since standard Keras metrics are designed for classification tasks, custom metri
 
 These metrics are crucial for segmentation tasks as they provide pixel-wise evaluation. 
 
-### Best Model Selection: 
+#### Best Model Selection: 
 
 After evaluating all combinations, the hyperparameters corresponding to the model with the lowest validation loss are selected as the best. 
 
-### Metrics: 
+#### Metrics: 
 Performance is evaluated using the following metrics: 
 
 - **Validation Loss and Accuracy**: To assess the overall performance during training. 
@@ -304,7 +303,7 @@ Performance is evaluated using the following metrics:
 
 ---
 
-## Step 5: Training the Best Model 
+### Step 5: Training the Best Model 
 
 The best hyperparameters are used to train the final model for 6 epochs with 20% validation data. 
 
