@@ -1,4 +1,4 @@
-# VR_Project : Face Mask Detection, Classification, and Segmentation
+ VR_Project : Face Mask Detection, Classification, and Segmentation
 
 # PART C - Region Segmentation Using Traditional Techniques
 
