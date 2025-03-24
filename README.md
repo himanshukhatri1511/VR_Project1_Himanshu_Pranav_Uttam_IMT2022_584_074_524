@@ -49,10 +49,17 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 -  **Average Dice Score:** **0.50** 
   
 ## Output
-- The final segmentation masks are obtained and compared with **ground truth segmentation masks** for evaluation .
 - The **top 5 images** with the highest segmentation accuracy (highest IoU scores) are visualized.
 
  ![Figure_1](https://github.com/user-attachments/assets/a1e9f02a-fc9e-4069-bd89-67c3e633e55e)
+
+
+ ## Observation
+
+- The **IoU** and **Dice Score** values are relatively low when using traditional segmentation techniques.  
+- This is due to variations in **lighting conditions, mask colors, and background noise**, which affect threshold-based methods.  
+- Traditional techniques like **HSV thresholding and Otsu’s method** rely on predefined rules and are less adaptive to diverse real-world conditions.
+
 
      
 
