@@ -93,12 +93,12 @@ The dataset used in this project is the MSFD dataset, which contains two folders
 ---
 ## Methodology
 
-## Step 1: Dataset Preparation 
+### Step 1: Dataset Preparation 
 
-### Data Loading: 
+#### Data Loading: 
 Images and masks are loaded using TensorFlow's `load_img()` and converted to arrays using `img_to_array()`. 
 
-### Splitting: 
+#### Splitting: 
 The dataset is split into training and testing sets using an 80-20 split (`train_test_split`).  
 - **Training set**: 7505 samples  
 - **Testing set**: 1877 samples 
