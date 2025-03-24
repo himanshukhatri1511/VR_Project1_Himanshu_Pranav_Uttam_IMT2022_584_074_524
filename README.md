@@ -96,7 +96,83 @@ Two machine learning models were trained and evaluated using **5-fold Stratified
 ## Conclusion
 Both models effectively classified masked and unmasked faces, with SVM achieving higher accuracy. Future work could explore deep learning-based approaches or fine-tuning MLP hyperparameters for improved results.
 
+# Task B : Face Mask Detection Using Convolutional Neural Networks (CNN)
 
+## Overview
+This part implements a Convolutional Neural Network (CNN) to classify face images into two categories: "with mask" and "without mask." The CNN model leverages deep learning techniques to automatically extract features, achieving higher accuracy compared to traditional machine learning approaches.
+
+---
+
+## Methodology
+
+### 1. Dataset Preprocessing
+- Images were converted to grayscale and resized to **64x64 pixels**.
+- **Histogram equalization** was applied to enhance contrast.
+- The dataset was split into **80% training** and **20% testing** sets.
+
+### 2. CNN Architecture
+A **sequential CNN model** was implemented with the following layers:
+- **Three convolutional layers** (32, 64, and 128 filters).
+- **Max-pooling layers** for downsampling.
+- **Dropout layers** (rates: 0.3, 0.5) for regularization.
+- A **dense output layer** with sigmoid activation for binary classification.
+
+### 3. Training Configuration
+- **Optimizers tested**: Adam vs. SGD.
+- **Learning rates**: 0.001 vs. 0.0001.
+- **Training duration**: 20 epochs with early stopping.
+- **Learning rate reduction** was applied to optimize training.
+- Multiple models were saved for comparison.
+
+---
+
+## Hyperparameter Experiments
+The following combinations were tested:
+
+| Optimizer | Dropout Rate | Learning Rate | Accuracy |
+|-----------|--------------|---------------|----------|
+| Adam      | 0.3          | 0.001         | **94.97%** |
+| Adam      | 0.5          | 0.001         | 93.12%   |
+| SGD       | 0.3          | 0.001         | 89.45%   |
+| SGD       | 0.5          | 0.0001        | 85.20%   |
+
+### Key Findings:
+- **Adam** consistently outperformed **SGD**.
+- **Dropout = 0.3** yielded the best accuracy (94.97%).
+- Lower learning rates (e.g., 0.0001) with **SGD** led to poor performance.
+- Adding more convolutional layers did **not** improve accuracy (risk of overfitting).
+
+---
+
+## Results
+
+### Performance Comparison
+| Model       | Accuracy | Training Time |
+|-------------|----------|---------------|
+| CNN (Adam)  | 94.97%   | 6-7 minutes   |
+| SVM         | 92.26%   | 1-1.5 minutes |
+| MLP         | 90.17%   | 1-1.5 minutes |
+
+### Observations
+1. **CNN outperformed SVM and MLP** by a significant margin (up to **+6.5% accuracy**).
+2. **Adam optimizer** was more effective than SGD.
+3. **Dropout = 0.3** provided the best balance between generalization and accuracy.
+4. **Training time** for CNN was longer (~6-7 minutes) compared to traditional ML models (~1-1.5 minutes).
+
+---
+
+## Conclusion
+- The CNN model achieved **94.97% accuracy**, surpassing traditional methods (SVM: 92.26%, MLP: 90.17%).
+- Critical factors for success:
+  - **Optimizer choice** (Adam > SGD).
+  - **Moderate dropout** (0.3) for regularization.
+  - **Learning rate tuning** (0.001 worked best).
+- **Future Work**:
+  - Experiment with **data augmentation** to improve robustness.
+  - Test advanced architectures like **ResNet** or **MobileNet**.
+  - Fine-tune deeper layers for potential gains.
+
+---
 
 
 ## PART C - Region Segmentation Using Traditional Techniques
