@@ -42,8 +42,7 @@ In this part, we implement region-based segmentation approach to identify and se
   - **Dice Score**: Measures the similarity between the predicted and ground truth masks.
 
 - For each image, **IoU** and **Dice Score** are computed.
-  | **Average IoU**  | **0.35**  |
-  | **Average Dice** | **0.50**  |
+
 - The **average IoU score** across all images is **0.35**
 - The **average Dice score** is **0.50**
 
