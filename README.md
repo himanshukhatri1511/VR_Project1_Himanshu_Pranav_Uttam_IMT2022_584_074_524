@@ -91,6 +91,7 @@ The dataset used in this project is the MSFD dataset, which contains two folders
 - **face_crop_segmentation**: This folder contains the corresponding 9,382 binary segmentation masks. Each mask highlights the regions of interest (mask and face) in the input images using binary classification. 
 
 ---
+## Methodology
 
 ## Step 1: Dataset Preparation 
 
@@ -205,7 +206,7 @@ The best hyperparameters are used to train the final model for 6 epochs with 20%
 
 ---
 
-## 4. Hyperparameters and Experiments 
+## Hyperparameters and Experiments 
 
 ### Hyperparameters Tried: 
 
@@ -228,7 +229,7 @@ The best hyperparameters are used to train the final model for 6 epochs with 20%
 
 ---
 
-## 5. Results 
+## Results 
 
 ### Evaluation Metrics on the Test Set: 
 
