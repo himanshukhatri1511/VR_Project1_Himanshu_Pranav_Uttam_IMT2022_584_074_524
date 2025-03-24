@@ -55,6 +55,9 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 
 ![Figure_1](https://github.com/user-attachments/assets/a1e9f02a-fc9e-4069-bd89-67c3e633e55e)
 
+
+![Figure_3](https://github.com/user-attachments/assets/56f510da-dc07-4241-9be4-9451ecc5360a)
+
 ## Observations
 
 - The **IoU** and **Dice Score** values are relatively low when using traditional segmentation techniques.
