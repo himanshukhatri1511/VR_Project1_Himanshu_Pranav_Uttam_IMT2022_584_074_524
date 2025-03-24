@@ -1,5 +1,5 @@
 # VR_Project: Face Mask Detection, Classification, and Segmentation
-# Visual Recognition Project
+
 
 <h3 align = "center">
 Himanshu Khatri(IMT2022584)<br>
