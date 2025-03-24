@@ -175,7 +175,7 @@ The following combinations were tested:
 ---
 
 
-## Task C : Region Segmentation Using Traditional Techniques
+# Task C : Region Segmentation Using Traditional Techniques
 
 ## Objective
 In this part, we implement a region-based segmentation approach to identify and segment mask regions for faces classified as **"with mask."**  
@@ -246,7 +246,7 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 
 
 
-## Task D :  Mask Segmentation Using U-Net
+# Task D :  Mask Segmentation Using U-Net
 
 ## Introduction 
 
