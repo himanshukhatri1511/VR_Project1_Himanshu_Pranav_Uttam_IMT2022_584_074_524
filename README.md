@@ -38,6 +38,63 @@ The libraries used in the project are as follows:
 
 
 #Binary Classification(Task A and B)
+# Task A: Binary Classification Using Handcrafted Features and ML Classifiers
+
+## Overview
+
+This part aims to classify face images into two categories: "with mask" and "without mask" using handcrafted features and machine learning classifiers. The extracted features include shape, texture, and edge information, which are then used to train and evaluate Support Vector Machine (SVM) and Multi-Layer Perceptron (MLP) models.
+
+## Methodology
+
+### 1. Dataset Preparation
+- Face images were loaded from the dataset and converted to grayscale.
+- Images were resized to 64x64 pixels for consistency.
+- Histogram equalization was applied to improve contrast.
+
+### 2. Feature Extraction
+The following handcrafted feature extraction techniques were applied:
+- **Histogram of Oriented Gradients (HOG)**: Captures shape and texture information by computing gradients.
+- **Local Binary Patterns (LBP)**: Encodes texture information using neighborhood pixel differences.
+- **Canny Edge Detection**: Highlights significant edges in the image.
+- **Sobel Edge Detection**: Computes gradients in both x and y directions to extract edge information.
+- Features from all methods were concatenated into a single feature vector.
+
+### 3. Feature Transformation
+- Standardization was applied using `StandardScaler` to normalize feature values.
+- Principal Component Analysis (PCA) was used to reduce dimensionality while retaining important variance.
+
+### 4. Model Training and Evaluation
+Two machine learning models were trained and evaluated using **5-fold Stratified Cross-Validation**:
+- **Support Vector Machine (SVM)**: Grid search was performed to find the best hyperparameters for kernel type and regularization parameter.
+- **Multi-Layer Perceptron (MLP)**: A neural network with varying hidden layer sizes (`50`, `100`, and `(50,50)`) and activation functions (`relu` and `tanh`) was trained with up to `500` iterations.
+
+## Results
+
+### Model Performance Comparison
+| Model | Test Accuracy |
+|-------|--------------|
+| SVM   | 92.26%       |
+| MLP   | 90.17%       |
+
+### Classification Report
+#### SVM Performance
+- **Precision**: 95% (Class 0), 90% (Class 1)
+- **Recall**: 89% (Class 0), 96% (Class 1)
+- **Overall Accuracy**: 92.26%
+
+#### MLP Performance
+- **Precision**: 91% (Class 0), 90% (Class 1)
+- **Recall**: 88% (Class 0), 92% (Class 1)
+- **Overall Accuracy**: 90.17%
+
+## Observations
+- SVM outperformed MLP in classification accuracy.
+- SVM showed better generalization due to its ability to effectively separate classes in a high-dimensional space.
+- MLP, despite slightly lower accuracy, demonstrated strong performance in learning complex patterns.
+- Adding more layers in MLP did not significantly improve accuracy, possibly due to overfitting or vanishing gradients.
+
+## Conclusion
+Both models effectively classified masked and unmasked faces, with SVM achieving higher accuracy. Future work could explore deep learning-based approaches or fine-tuning MLP hyperparameters for improved results.
 
 
 
