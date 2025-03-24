@@ -63,3 +63,185 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 - The **IoU** and **Dice Score** values are relatively low when using traditional segmentation techniques.
 - This is due to variations in **lighting conditions, mask colors, and background noise**, which affect threshold-based methods.
 - Traditional techniques like **HSV thresholding and Otsu’s method** rely on predefined rules and are less adaptive to diverse real-world conditions.
+
+
+
+## PART D -  Mask Segmentation Using U-Net
+
+## Introduction 
+
+This part of the project focuses on Mask Segmentation Using U-Net, leveraging the powerful U-Net architecture and the goal is to classify each pixel of an input image into predefined categories, with a focus on differentiating between mask and non-mask regions. 
+
+### Key objectives include: 
+
+- **Training a U-Net Model**: Developing and fine-tuning a U-Net model for accurate segmentation of mask regions in input images. 
+- **Performance Comparison**: Evaluating the performance of the U-Net model against traditional segmentation methods using metrics such as Intersection over Union (IoU) and Dice score. 
+
+---
+
+## Dataset 
+
+### Source: 
+The dataset comprises input images and their corresponding binary masks (ground truth). Each mask indicates the target regions in the input images. 
+
+### Structure: 
+The dataset used in this project is the MSFD dataset, which contains two folders: 
+
+- **face_crop**: This folder contains 9,382 cropped face images. 
+- **face_crop_segmentation**: This folder contains the corresponding 9,382 binary segmentation masks. Each mask highlights the regions of interest (mask and face) in the input images using binary classification. 
+
+---
+
+## Step 1: Dataset Preparation 
+
+### Data Loading: 
+Images and masks are loaded using TensorFlow's `load_img()` and converted to arrays using `img_to_array()`. 
+
+### Splitting: 
+The dataset is split into training and testing sets using an 80-20 split (`train_test_split`).  
+- **Training set**: 7505 samples  
+- **Testing set**: 1877 samples 
+
+---
+
+## Step 2: Preprocessing 
+
+The preprocessing step ensures the dataset is prepared for effective training. The following transformations are applied: 
+
+- **Normalization**: Images are normalized to a range of [0, 1], which is crucial for stabilizing the learning process during model training. 
+- **Binarization**: Masks are binarized using a threshold (> 0.5). This ensures the masks have values of either 0 or 1, suitable for binary segmentation tasks. 
+- **Channel Dimensions**: Single-channel grayscale masks are expanded to include a channel dimension, ensuring compatibility with the U-Net architecture. Grayscale images are converted to RGB by repeating the single channel across all three channels. 
+
+After preprocessing, the input images have dimensions of (128, 128, 3), representing the resized RGB images, and the corresponding output masks have dimensions of (128, 128, 1), representing the binarized single-channel masks. 
+
+---
+
+## Step 3: Model Architecture 
+
+### U-Net Model: 
+
+A custom U-Net model is built using Keras. 
+
+- **Input Layer**:  
+   The model takes input images with dimensions (128, 128, 3). 
+
+- **Encoder**:  
+   Consists of multiple convolutional layers where features are extracted using filters.  
+   - Each convolutional block includes two `Conv2D` layers with a specified number of filters, kernel size (3x3), activation function (e.g., ReLU), and `padding='same'` to preserve spatial dimensions.  
+   - At each stage, the output is downsampled using a `MaxPooling2D` layer (pool size: 2x2).  
+   - The encoder progressively doubles the number of filters at each level to capture finer features at deeper layers.  
+   - Skip connections are stored at each stage to transfer spatial information to the decoder. 
+
+- **Bottleneck**:  
+   This stage operates at the lowest resolution of the feature map.  
+   - Includes two `Conv2D` layers with the highest number of filters to extract the most abstract features. 
+
+- **Decoder**:  
+   - The decoder upsamples the feature maps back to the original input size using `Conv2DTranspose` layers (strides: 2x2, kernel size: 2x2, padding='same').  
+   - Each upsampling step is followed by a concatenation with the corresponding skip connection from the encoder, enabling the model to recover spatial details.  
+   - Further, two `Conv2D` layers are applied to refine the upsampled features. 
+
+- **Output Layer**:  
+   - The final layer is a `Conv2D` layer with 1 filter and kernel size (1x1).  
+   - The activation function is set to `sigmoid`, producing an output mask with dimensions (128, 128, 1), where pixel values range between 0 and 1. 
+
+### Model Parameters: 
+
+- **Number of Filters**: `num_filters`, defining the base number of filters in the first convolutional block. 
+- **Number of Layers**: `num_layers`, representing the number of encoder-decoder blocks. 
+- **Activation Function**: `activation`, such as ReLU, applied after each convolution operation. 
+
+### Hyperparameters: 
+
+- Number of filters: [32, 64] 
+- Number of layers: [3, 4] 
+- Activation function: relu 
+- Batch size: [16, 32] 
+- Learning rates: [1e-4, 1e-3] 
+
+---
+
+## Step 4: Grid Search for Hyperparameter Tuning 
+
+### Grid Search: 
+To identify the optimal hyperparameters for the U-Net model, a grid search approach is employed. This involves: 
+
+- Defining a **Parameter Grid** containing various combinations of hyperparameters. 
+- Using `ParameterGrid` from `sklearn.model_selection` to generate all possible combinations of the defined hyperparameters. 
+
+### Hyperparameter Tuning Process: 
+
+1. **Model Building**:  
+   The `build_unet_model` function is used to construct the U-Net model based on the current combination of hyperparameters from the grid. 
+
+2. **Training and Evaluation**:  
+   - For each hyperparameter combination, the model is compiled, trained, and validated.  
+   - Performance is assessed using validation loss and segmentation metrics, which include pixel-level metrics tailored to the segmentation task. 
+
+### Custom Metrics: 
+
+Since standard Keras metrics are designed for classification tasks, custom metrics were implemented: 
+
+- **Intersection over Union (IoU)**: Calculates the overlap between predicted and ground truth regions. 
+- **Dice Score**: Measures the similarity between predicted and ground truth regions. 
+
+These metrics are crucial for segmentation tasks as they provide pixel-wise evaluation. 
+
+### Best Model Selection: 
+
+After evaluating all combinations, the hyperparameters corresponding to the model with the lowest validation loss are selected as the best. 
+
+### Metrics: 
+Performance is evaluated using the following metrics: 
+
+- **Validation Loss and Accuracy**: To assess the overall performance during training. 
+- **Segmentation Metrics**: Include IoU, Dice score, precision, and recall, providing insights into pixel-level accuracy. 
+
+---
+
+## Step 5: Training the Best Model 
+
+The best hyperparameters are used to train the final model for 6 epochs with 20% validation data. 
+
+---
+
+## 4. Hyperparameters and Experiments 
+
+### Hyperparameters Tried: 
+
+- Number of Filters: [32, 64] 
+- Number of Layers: [3, 4] 
+- Learning Rates: [1e-4, 1e-3] 
+- Batch Sizes: [16, 32] 
+- Activation: relu 
+
+### Results of Grid Search: 
+
+**Best Hyperparameters**: 
+
+- Number of Filters: 64 
+- Number of Layers: 4 
+- Learning Rate: 1e-4 
+- Batch Size: 16 
+
+**Best Validation Loss**: 0.1204 
+
+---
+
+## 5. Results 
+
+### Evaluation Metrics on the Test Set: 
+
+The best model, selected based on validation loss, was evaluated on the test set with the following metrics: 
+
+- **IoU**: 0.87 
+- **Dice Score**: 0.93 
+- **Precision**: 0.91 
+- **Recall**: 0.90 
+- **Accuracy**: 0.94 
+
+### Visualization Results: 
+
+Ground truth and predicted masks closely match, demonstrating effective segmentation.  
+Examples of input images, ground truth masks, and predictions are visualized for qualitative analysis. 
+
