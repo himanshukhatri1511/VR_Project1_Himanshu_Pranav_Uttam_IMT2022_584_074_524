@@ -567,9 +567,13 @@ Examples of input images, ground truth masks, and predictions are visualized for
 
 
 
+---
 
 
-## Performance of U-Net vs traditional segmentation method 
+
+---
+
+# Performance of U-Net vs traditional segmentation method 
 
 | Method       | IoU score| Dice score |
 |-------------|----------|---------------|
