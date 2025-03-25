@@ -64,7 +64,7 @@ cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
 ```
 
 
-2. Clone the datasets:
+2. Datasets:
 
  Clone the Face-Mask-Dataset (for Tasks A & B)
 ```bash
@@ -76,6 +76,21 @@ Dataset: https://github.com/sadjadrz/MFSD
 
 3. Make sure that the folder structure is as follows
 
+```bash
+VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524/
+│
+├── Face-Mask-Detection/
+│   ├── dataset/         
+│   │   ├── with_mask/    
+│   │   ├── without_mask/           
+│
+├── MSFD/  
+│   ├── subfolders/  
+│
+├── binary_classification_tasks.ipynb
+├── mask_segmentation.ipynb
+```
+4. Run the notebooks.
 
 # Task A: Binary Classification Using Handcrafted Features and ML Classifiers
 
