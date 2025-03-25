@@ -228,7 +228,8 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 ## Output
 - The **top 5 images** with the highest segmentation accuracy (highest IoU scores) are visualized.
 
-![Figure_final](https://github.com/user-attachments/assets/2fd9855d-9cd7-40e9-9c5d-f3098d009718)
+
+![output_final](https://github.com/user-attachments/assets/cf516fd9-261a-423e-a9f4-2846759e54ef)
 
 
 ## Observations
