@@ -11,12 +11,13 @@ Uttam Hamsaraj(IMT2022524)</h3>
 Develop a computer vision solution to classify and segment face masks in images. The
 project involves using handcrafted features with machine learning classifiers and deep
 learning techniques to perform classification and segmentation.
+
 Tasks are as follows:
 
-* **TASK A - Binary Classification Using Handcrafted Features and ML Classifiers
-* **TASK B - Face Mask Detection Using Convolutional Neural Networks (CNN)
-* **TASK C - Region Segmentation Using Traditional Techniques
-* **TASK D - mask Segmentation using U-Net
+* TASK A - Binary Classification Using Handcrafted Features and ML Classifiers
+* TASK B - Face Mask Detection Using Convolutional Neural Networks (CNN)
+* TASK C - Region Segmentation Using Traditional Techniques
+* TASK D - mask Segmentation using U-Net
 
 # Dataset and Libraries used
 
