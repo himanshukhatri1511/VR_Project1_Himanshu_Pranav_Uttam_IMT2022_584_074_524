@@ -270,7 +270,9 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 - Traditional techniques like **HSV thresholding and Otsu’s method** rely on predefined rules and are less adaptive to diverse real-world conditions.
 
 
+---
 
+---
 
 
 
