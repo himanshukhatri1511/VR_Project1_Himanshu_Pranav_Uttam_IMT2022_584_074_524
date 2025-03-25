@@ -424,3 +424,11 @@ The best model, selected based on validation loss, was evaluated on the test set
 Ground truth and predicted masks closely match, demonstrating effective segmentation.  
 Examples of input images, ground truth masks, and predictions are visualized for qualitative analysis. 
 
+## Performance of U-Net vs traditional segmentation method 
+
+| Method       | IoU score| Dice score |
+|-------------|----------|---------------|
+| Traditional Method  | 0.35   | 0.50   |
+| U-Net         | 0.92   | 0.96 |
+
+ 
