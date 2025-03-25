@@ -62,9 +62,15 @@ pip install tensorflow keras opencv-python scikit-image matplotlib scikit-learn 
 git clone https://github.com/himanshukhatri1511/VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524.git
 cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
 ```
+ 
+2. Clone the datasets:
+```bash
+# Clone the Face-Mask-Dataset (for Tasks A & B)
+git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git
 
-2. 
-
+# Clone the MFSD dataset (for Tasks C & D)
+git clone https://github.com/sadjadrz/MFSD.git
+```
 
 
 ---
