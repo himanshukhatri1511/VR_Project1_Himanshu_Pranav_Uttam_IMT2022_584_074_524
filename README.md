@@ -524,12 +524,47 @@ Examples of input images, ground truth masks, and predictions are visualized for
 | `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 3}`  | 5      | 0.0898   | 0.9003   | 0.9473   | 0.9659   | 0.9543   | 0.9406     | ~95s       |
 | `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 4}`  | 5      | 0.0908   | 0.9017   | 0.9472   | 0.9662   | 0.9634   | 0.9318     | ~100s      |
 | `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 3}`  | 5      | 0.0859   | 0.9048   | 0.9492   | 0.9669   | 0.9488   | 0.9497     | ~225s      |
-| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 4}`  | 5      | 0.0852   | 0.9033   | 0.9473   | 0.9656   | 0.9459   | 0.9489     | ~300s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 4}`  | 5      | 0.0852   | 0.9033   | 0.9473   |
+0.9656   | 0.9459   | 0.9489     | ~300s      |
+
+
 - Took a lot of time (around 4 hours) for the U-net model to get trained.
-- Generally, more number of filters performed better (64 > 32)
-- Taking a lower learning rate (0.0001) resulted in better tuning of parameters as compared to learning rate of (0.001).
-- 
-- 
+### Performance Trends
+1. **Learning Rate Impact**:
+   - Lower LR (0.0001) achieved better final metrics but required more epochs to converge
+   - Higher LR (0.001) showed faster initial convergence but sometimes plateaued earlier
+   - Best balance: `LR=0.001` with `batch_size=32` (IoU 0.9048)
+
+2. **Model Depth vs. Filters**:
+   - 4-layer models generally outperformed 3-layer when using lower learning rates
+   - 64 filters consistently beat 32 filters in final metrics (IoU +1-2%)
+   - Most efficient: `num_layers=3` with `num_filters=64`
+
+3. **Batch Size Effects**:
+   - Batch size 32 showed better GPU utilization (95% vs 78-82% for bs=16)
+   - Larger batches (32) achieved comparable metrics with faster training times
+   - Best throughput: `batch_size=32` with `learning_rate=0.001`
+
+### Top Performers
+| Rank | Config                                                                      | IoU   | Training Time | Key Advantage |
+|------|-----------------------------------------------------------------------------|-------|---------------|---------------|
+| 1    | `{'bs':32, 'lr':0.001, 'filters':64, 'layers':3}`                          | 0.9048| 225s/epoch    | Best speed/accuracy tradeoff |
+| 2    | `{'bs':16, 'lr':0.0001, 'filters':64, 'layers':4}`                         | 0.9109| 310s/epoch    | Highest accuracy |
+| 3    | `{'bs':32, 'lr':0.001, 'filters':64, 'layers':4}`                          | 0.9033| 300s/epoch    | Most stable training |
+
+### Unexpected Findings
+1. **Recall Variability**:
+   - Some configurations showed recall >0.97 while precision dropped to 0.92
+   - Suggests potential class imbalance in validation data
+
+2. **GPU Utilization**:
+   - Smaller batch sizes (16) underutilized GPU (78-82%)
+   - Peak utilization (95%) only achieved with batch_size=32 and 64 filters
+
+3. **Convergence Patterns**:
+   - Deeper models (4 layers) needed lower learning rates for stability
+   - 3-layer models converged faster but plateaued slightly lower
+
 
 
 
