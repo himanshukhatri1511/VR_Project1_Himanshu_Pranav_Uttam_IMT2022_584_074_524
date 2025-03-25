@@ -13,9 +13,10 @@ project involves using handcrafted features with machine learning classifiers an
 learning techniques to perform classification and segmentation.
 Tasks are as follows:
 
-* **TASK A - Binary Classification Using Handcrafted Features and ML Classifiers:** Classifies images into "mask" or "no mask" using handcrafted features (e.g., HOG, LBP) and machine learning classifiers (e.g., SVM, Random Forest).
-* **TASK B - Face Mask Detection Using Convolutional Neural Networks (CNN):** Detects the bounding boxes of faces and masks using a CNN-based object detector (e.g., YOLO, SSD).
-* **TASK C - Region Segmentation Using Traditional Techniques:** Segments the mask region using traditional image processing techniques (e.g., color thresholding, contour detection).
+* **TASK A - Binary Classification Using Handcrafted Features and ML Classifiers
+* **TASK B - Face Mask Detection Using Convolutional Neural Networks (CNN)
+* **TASK C - Region Segmentation Using Traditional Techniques
+* **TASK D - mask Segmentation using U-Net
 
 # Dataset and Libraries used
 
