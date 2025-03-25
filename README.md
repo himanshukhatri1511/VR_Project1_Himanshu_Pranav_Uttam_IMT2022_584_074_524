@@ -448,11 +448,8 @@ The best hyperparameters are used to train the final model for 6 epochs with 20%
 
 **Best Validation Loss**: 0.0801 
 
-**After using these best parameters to build, compile and train the best model with 6 epochs and 20% validation data:
-** the model achieved : 
-- **Validation Accuracy**: 0.9710
-- **Validation IoU Score**: 0.9160
--  **Validation Loss**: 0.0742
+After using these best parameters to build, compile and train the best model with 6 epochs and 20% validation data:
+the model achieved : 
 
 | Metric                | Value   |
 |-----------------------|---------|
