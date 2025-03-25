@@ -506,6 +506,25 @@ Examples of input images, ground truth masks, and predictions are visualized for
 <img width="574" alt="predicted_vs_ground" src="https://github.com/user-attachments/assets/b3df4c72-ec82-4c00-a428-39309942c4c3" />
 
 ## Other observations : 
+
+| Params                                                                      | Epochs | Val Loss | Val IoU  | Val Dice | Val Acc  | Val Prec | Val Recall | Time/Epoch |
+|-----------------------------------------------------------------------------|--------|----------|----------|----------|----------|----------|------------|------------|
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.0001, 'num_filters': 32, 'num_layers': 3}` | 5      | 0.1117   | 0.8708   | 0.9295   | 0.9548   | 0.9455   | 0.9145     | ~80s       |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.0001, 'num_filters': 32, 'num_layers': 4}` | 5      | 0.0884   | 0.9020   | 0.9450   | 0.9633   | 0.9215   | 0.9703     | ~100s      |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.0001, 'num_filters': 64, 'num_layers': 3}` | 5      | 0.0930   | 0.8934   | 0.9436   | 0.9640   | 0.9609   | 0.9274     | ~220s      |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.0001, 'num_filters': 64, 'num_layers': 4}` | 5      | 0.0801   | 0.9109   | 0.9532   | 0.9706   | 0.9516   | 0.9551     | ~310s      |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 3}`  | 5      | 0.0885   | 0.8988   | 0.9449   | 0.9646   | 0.9569   | 0.9336     | ~95s       |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 4}`  | 5      | 0.0982   | 0.8857   | 0.9383   | 0.9598   | 0.9362   | 0.9409     | ~120s      |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 3}`  | 5      | 0.0921   | 0.8955   | 0.9451   | 0.9647   | 0.9550   | 0.9358     | ~215s      |
+| `{'activation': 'relu', 'batch_size': 16, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 4}`  | 5      | 0.0883   | 0.9012   | 0.9468   | 0.9655   | 0.9477   | 0.9465     | ~300s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.0001, 'num_filters': 32, 'num_layers': 3}` | 5      | 0.1323   | 0.8471   | 0.9133   | 0.9444   | 0.9283   | 0.8992     | ~85s       |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.0001, 'num_filters': 32, 'num_layers': 4}` | 5      | 0.1176   | 0.8650   | 0.9265   | 0.9531   | 0.9455   | 0.9085     | ~100s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.0001, 'num_filters': 64, 'num_layers': 3}` | 5      | 0.0980   | 0.8894   | 0.9395   | 0.9600   | 0.9273   | 0.9523     | ~230s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.0001, 'num_filters': 64, 'num_layers': 4}` | 5      | 0.0887   | 0.8961   | 0.9453   | 0.9649   | 0.9614   | 0.9299     | ~310s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 3}`  | 5      | 0.0898   | 0.9003   | 0.9473   | 0.9659   | 0.9543   | 0.9406     | ~95s       |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 4}`  | 5      | 0.0908   | 0.9017   | 0.9472   | 0.9662   | 0.9634   | 0.9318     | ~100s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 3}`  | 5      | 0.0859   | 0.9048   | 0.9492   | 0.9669   | 0.9488   | 0.9497     | ~225s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 4}`  | 5      | 0.0852   | 0.9033   | 0.9473   | 0.9656   | 0.9459   | 0.9489     | ~300s      |
 - Took a lot of time (around 4 hours) for the U-net model to get trained.
 - Generally, more number of filters performed better (64 > 32)
 - Taking a lower learning rate (0.0001) resulted in better tuning of parameters as compared to learning rate of (0.001).
