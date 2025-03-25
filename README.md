@@ -37,7 +37,7 @@ The libraries used in the project are as follows:
 - **NumPy**: Numerical computations.
 
 
-#Binary Classification(Task A and B)
+
 # Task A: Binary Classification Using Handcrafted Features and ML Classifiers
 
 ## Overview
