@@ -58,17 +58,21 @@ pip install tensorflow keras opencv-python scikit-image matplotlib scikit-learn 
 Steps to Run
 
 1. Clone this repository:
-
+```bash
 git clone https://github.com/himanshukhatri1511/VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524.git
 cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
+```
+
 
 2. Clone the datasets:
 
 # Clone the Face-Mask-Dataset (for Tasks A & B)
+```bash
 git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git
+```
 
 For Task C and D, download the MSFD dataset from the following link:
-MSFD Dataset
+Dataset: https://github.com/sadjadrz/MFSD
 
 
 # Task A: Binary Classification Using Handcrafted Features and ML Classifiers
