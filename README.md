@@ -11,10 +11,11 @@ Uttam Hamsaraj(IMT2022524)</h3>
 Develop a computer vision solution to classify and segment face masks in images. The
 project involves using handcrafted features with machine learning classifiers and deep
 learning techniques to perform classification and segmentation.
-TASK A - Binary Classification Using Handcrafted Features and ML Classifiers
-TASK B - Face Mask Detection Using Convolutional Neural Networks (CNN)
-TASK C - Region Segmentation Using Traditional Techniques
-TASK D - Mask Segmentation Using U-Net
+Tasks are as follows:
+
+* **TASK A - Binary Classification Using Handcrafted Features and ML Classifiers:** Classifies images into "mask" or "no mask" using handcrafted features (e.g., HOG, LBP) and machine learning classifiers (e.g., SVM, Random Forest).
+* **TASK B - Face Mask Detection Using Convolutional Neural Networks (CNN):** Detects the bounding boxes of faces and masks using a CNN-based object detector (e.g., YOLO, SSD).
+* **TASK C - Region Segmentation Using Traditional Techniques:** Segments the mask region using traditional image processing techniques (e.g., color thresholding, contour detection).
 
 # Dataset and Libraries used
 
@@ -40,6 +41,31 @@ The libraries used in the project are as follows:
 - **scikit-learn**: For machine learning model implementation and evaluation.
 - **NumPy**: Numerical computations.
 
+
+
+## Prerequisites
+
+Install Python 3.10.
+
+Install all dependencies using:
+```bash
+pip install tensorflow keras opencv-python scikit-image matplotlib scikit-learn numpy
+```
+
+
+## Steps to Run
+
+1. Clone this repository:
+```bash
+git clone https://github.com/himanshukhatri1511/VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524.git
+cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
+```
+
+2. 
+
+
+
+---
 
 
 # Task A: Binary Classification Using Handcrafted Features and ML Classifiers
