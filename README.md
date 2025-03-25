@@ -174,7 +174,6 @@ The following combinations were tested:
 
 ---
 
-# Mask Segmentation(Task C and D)
 # Task C : Region Segmentation Using Traditional Techniques
 
 ## Objective
