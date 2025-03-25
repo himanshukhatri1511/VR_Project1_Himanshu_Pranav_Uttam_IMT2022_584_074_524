@@ -472,6 +472,10 @@ the model achieved :
 | Validation IoU Score  | 0.9160  |
 | Validation Loss       | 0.0742  |
 
+<img width="961" alt="plots" src="https://github.com/user-attachments/assets/42a7e08e-c11a-4eea-9a04-fce84290e905" />
+
+
+
 ---
 
 ## Results 
@@ -493,6 +497,17 @@ The best model, selected based on validation loss, was evaluated on the test set
 
 Ground truth and predicted masks closely match, demonstrating effective segmentation.  
 Examples of input images, ground truth masks, and predictions are visualized for qualitative analysis. 
+<img width="574" alt="predicted_vs_ground" src="https://github.com/user-attachments/assets/b3df4c72-ec82-4c00-a428-39309942c4c3" />
+
+## Other observations : 
+- Took a lot of time (around 4 hours) for the U-net model to get trained.
+- Generally, more number of filters performed better (64 > 32)
+- Taking a lower learning rate (0.0001) resulted in better tuning of parameters as compared to learning rate of (0.001).
+- 
+- 
+
+
+
 
 ## Performance of U-Net vs traditional segmentation method 
 
