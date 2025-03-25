@@ -174,11 +174,11 @@ The following combinations were tested:
 
 ---
 
-
+# Mask Segmentation(Task C and D)
 # Task C : Region Segmentation Using Traditional Techniques
 
 ## Objective
-In this part, we implement a region-based segmentation approach to identify and segment mask regions for faces classified as **"with mask."**  
+In this task, we implement  region-based segmentation using traditional methods to identify and segment mask regions for faces classified as **"with mask."**  
 The predicted segmentation masks are compared with the provided ground truth masks and evaluated using **Intersection over Union (IoU)** and **Dice Score**.
 
 ## Input Dataset
