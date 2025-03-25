@@ -70,6 +70,13 @@ cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
 ---
 
 
+
+
+
+
+---
+
+
 # Task A: Binary Classification Using Handcrafted Features and ML Classifiers
 
 ## Overview
@@ -206,6 +213,13 @@ The following combinations were tested:
 
 ---
 
+
+
+
+
+
+---
+
 # Task C : Region Segmentation Using Traditional Techniques
 
 ## Objective
@@ -271,6 +285,11 @@ For each image, both **IoU** and **Dice Score** are computed to assess segmentat
 
 
 ---
+
+
+
+
+
 
 ---
 
