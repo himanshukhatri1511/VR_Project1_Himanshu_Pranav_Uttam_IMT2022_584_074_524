@@ -68,9 +68,10 @@ cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
 # Clone the Face-Mask-Dataset (for Tasks A & B)
 git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git
 
-For Task C and D, download the MS
-```
+For Task C and D, download the MSFD dataset from this link
 
+```
+https://github.com/sadjadrz/MFSD
 
 ---
 
