@@ -539,8 +539,7 @@ Examples of input images, ground truth masks, and predictions are visualized for
 | `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 3}`  | 5      | 0.0898   | 0.9003   | 0.9473   | 0.9659   | 0.9543   | 0.9406     | ~95s       |
 | `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 32, 'num_layers': 4}`  | 5      | 0.0908   | 0.9017   | 0.9472   | 0.9662   | 0.9634   | 0.9318     | ~100s      |
 | `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 3}`  | 5      | 0.0859   | 0.9048   | 0.9492   | 0.9669   | 0.9488   | 0.9497     | ~225s      |
-| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 4}`  | 5      | 0.0852   | 0.9033   | 0.9473   |
-0.9656   | 0.9459   | 0.9489     | ~300s      |
+| `{'activation': 'relu', 'batch_size': 32, 'learning_rate': 0.001, 'num_filters': 64, 'num_layers': 4}`  | 5      | 0.0852   | 0.9033   | 0.9473   | 0.9656   | 0.9459   | 0.9489     | ~300s      |
 
 
 - Took a lot of time (around 4 hours) for the U-net model to get trained.
