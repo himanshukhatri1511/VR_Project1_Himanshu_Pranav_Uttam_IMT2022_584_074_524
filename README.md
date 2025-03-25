@@ -448,7 +448,7 @@ The best hyperparameters are used to train the final model for 6 epochs with 20%
 
 **Best Validation Loss**: 0.0801 
 
-After using these best parameters to build, compile and train the best model with 6 epochs and 20% validation data:
+After using these best parameters to build, compile and train the best model with 6 epochs and 20% validation data,
 the model achieved : 
 
 | Metric                | Value   |
@@ -465,11 +465,14 @@ the model achieved :
 
 The best model, selected based on validation loss, was evaluated on the test set with the following metrics: 
 
-- **IoU**: 0.87 
-- **Dice Score**: 0.93 
-- **Precision**: 0.91 
-- **Recall**: 0.90 
-- **Accuracy**: 0.94 
+| Metric           | Value   |
+|------------------|---------|
+| Test IoU         | 0.9198  |
+| Test Dice Score  | 0.9582  |
+| Test Precision   | 0.9516  |
+| Test Recall      | 0.9650  |
+| Test Accuracy    | 0.9720  |
+
 
 ### Visualization Results: 
 
