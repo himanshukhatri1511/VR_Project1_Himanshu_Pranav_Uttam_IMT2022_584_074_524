@@ -66,7 +66,7 @@ cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
 
 2. Clone the datasets:
 
-# Clone the Face-Mask-Dataset (for Tasks A & B)
+Clone the Face-Mask-Dataset (for Tasks A & B)
 ```bash
 git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git
 ```
