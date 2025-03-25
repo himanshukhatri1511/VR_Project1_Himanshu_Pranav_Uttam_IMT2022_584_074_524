@@ -313,7 +313,9 @@ The dataset is split into training and testing sets using an 80-20 split (`train
 - **Training set**: 7505 samples  
 - **Testing set**: 1877 samples 
 
+
 ---
+
 
 ### Step 2: Preprocessing 
 
@@ -325,7 +327,9 @@ The preprocessing step ensures the dataset is prepared for effective training. T
 
 After preprocessing, the input images have dimensions of (128, 128, 3), representing the resized RGB images, and the corresponding output masks have dimensions of (128, 128, 1), representing the binarized single-channel masks. 
 
+
 ---
+
 
 ### Step 3: Model Architecture 
 
@@ -369,7 +373,9 @@ A custom U-Net model is built using Keras.
 - Batch size: [16, 32] 
 - Learning rates: [1e-4, 1e-3] 
 
+
 ---
+
 
 ### Step 4: Grid Search for Hyperparameter Tuning 
 
@@ -407,13 +413,19 @@ Performance is evaluated using the following metrics:
 - **Validation Loss and Accuracy**: To assess the overall performance during training. 
 - **Segmentation Metrics**: Include IoU, Dice score, precision, and recall, providing insights into pixel-level accuracy. 
 
+
 ---
+
 
 ### Step 5: Training the Best Model 
 
 The best hyperparameters are used to train the final model for 6 epochs with 20% validation data. 
 
+
+
 ---
+
+
 
 ## Hyperparameters and Experiments 
 
@@ -441,6 +453,12 @@ The best hyperparameters are used to train the final model for 6 epochs with 20%
 - **Validation Accuracy**: 0.9710
 - **Validation IoU Score**: 0.9160
 -  **Validation Loss**: 0.0742
+
+| Metric                | Value   |
+|-----------------------|---------|
+| Validation Accuracy   | 0.9710  |
+| Validation IoU Score  | 0.9160  |
+| Validation Loss       | 0.0742  |
 
 ---
 
