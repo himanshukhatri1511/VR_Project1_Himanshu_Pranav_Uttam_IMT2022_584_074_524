@@ -55,32 +55,20 @@ pip install tensorflow keras opencv-python scikit-image matplotlib scikit-learn 
 ```
 
 
-## Steps to Run
+Steps to Run
 
 1. Clone this repository:
-```bash
+
 git clone https://github.com/himanshukhatri1511/VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524.git
 cd VR_Project1_Himanshu_Pranav_Uttam_IMT2022_584_074_524
-```
- 
+
 2. Clone the datasets:
-```bash
+
 # Clone the Face-Mask-Dataset (for Tasks A & B)
 git clone https://github.com/chandrikadeb7/Face-Mask-Detection.git
 
-# Clone the MFSD dataset (for Tasks C & D)
-git clone https://github.com/sadjadrz/MFSD.git
-```
-
-
----
-
-
-
-
-
-
----
+For Task C and D, download the MSFD dataset from the following link:
+MSFD Dataset
 
 
 # Task A: Binary Classification Using Handcrafted Features and ML Classifiers
@@ -484,10 +472,6 @@ the model achieved :
 | Validation IoU Score  | 0.9160  |
 | Validation Loss       | 0.0742  |
 
-<img width="961" alt="plots" src="https://github.com/user-attachments/assets/4692dbd0-597c-44cd-9d9f-9c49634d29e7" />
-
-
-
 ---
 
 ## Results 
@@ -503,11 +487,6 @@ The best model, selected based on validation loss, was evaluated on the test set
 | Test Precision   | 0.9516  |
 | Test Recall      | 0.9650  |
 | Test Accuracy    | 0.9720  |
-
-<img width="574" alt="predicted_vs_ground" src="https://github.com/user-attachments/assets/464d7a08-2d17-48c7-8b54-6b61811b4ed2" />
-
-## Other observations :
-
 
 
 ### Visualization Results: 
